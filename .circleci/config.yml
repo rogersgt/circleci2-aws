@@ -12,7 +12,9 @@ jobs:
       - checkout
       - setup_remote_docker
       - run: yarn build
-      - run: yarn login
+      - run:
+          name: Login to Docker Hub
+          command: docker login -u $USERNAME -p $PASSWORD
       - run: yarn push
 
 workflows:
