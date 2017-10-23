@@ -1,0 +1,12 @@
+{
+  "name": "circleci2-aws",
+  "version": "1.0.0",
+  "description": "Docker Image for CircleCi 2.0 deployments",
+  "scripts": {
+    "build": "docker build -t gradyrogers/circleci2-aws .",
+    "login": "docker login -u $USERNAME -p $PASSWORD",
+    "push": "docker push gradyrogers/circleci2-aws"
+  },
+  "author": "",
+  "license": "ISC"
+}

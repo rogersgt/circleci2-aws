@@ -1,0 +1,27 @@
+defaults: &defaults
+  working_directory: ~/circleci2-aws
+  docker:
+    - image: circleci/node:6.11.2
+
+version: 2
+jobs:
+
+  build_and_update:
+    <<: *defaults
+    steps:
+      - checkout
+      - setup_remote_docker
+      - run: yarn build
+      - run: yarn login
+      - run: yarn push
+
+workflows:
+  version: 2
+
+  master:
+    jobs:
+      - build_and_update:
+          filters:
+            branches:
+              only:
+                - master
