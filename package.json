@@ -4,7 +4,9 @@
   "description": "Docker Image for CircleCi 2.0 deployments",
   "scripts": {
     "build": "docker build -t gradyrogers/circleci2-aws .",
-    "push": "docker push gradyrogers/circleci2-aws"
+    "dev": "docker-compose up --build -d",
+    "push": "docker push gradyrogers/circleci2-aws",
+    "start": "docker-compose up"
   },
   "author": "",
   "license": "ISC"

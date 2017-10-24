@@ -1,0 +1,11 @@
+version: '2'
+services:
+
+  circleci:
+    container_name: circle
+    build:
+      context: .
+      dockerfile: ./test.Dockerfile
+    volumes:
+      - .:/app
+    command: node test.js
